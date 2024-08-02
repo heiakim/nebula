@@ -1,0 +1,34 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local player = game.Players.LocalPlayer
+local playerName = player.Name
+local displayName = player.DisplayName
+local playerDisplay = playerName .. "(@" .. displayName .. ")."
+
+local Window = Fluent:CreateWindow({
+    Title = "nebula.lol",
+    SubTitle = "v1.0.0 staff",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 360),
+    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Rose", -- Ensure this theme is available or defined
+    MinimizeKey = Enum.KeyCode.RightControl -- Used when there's no MinimizeKeybind
+})
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "Information", Icon = "" }),
+    Autofarm = Window:AddTab({ Title = "Autofarm", Icon = "" }), -- Added comma and corrected key
+    Settings = Window:AddTab({ Title = "Settings", Icon = "setting" })
+}
+
+Tabs.Main:AddParagraph({
+    Title = "Thank You!",
+    Content = "Hello buyer\n\nThank you for choosing our product. Your support means a lot to us, and we hope you have a great experience using our services. If you have any questions or need assistance, please do not hesitate to reach out."
+})
+
+Tabs.Main:AddParagraph({
+    Title = "Our discord",
+    Content = "discord.gg/jwSDUCNMZc"
+})
